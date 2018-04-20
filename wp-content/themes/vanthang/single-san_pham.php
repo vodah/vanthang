@@ -60,7 +60,7 @@ get_header();
                                 <div class="content-ctsp  wow fadeInUp" data-wow-duration="0.8s">
                                     <p> <?= the_content(); ?></p>
                                     <div class="btnlienhe wow animated zoomIn">
-                                        <a href="#" class="btn btn-do btn-lienhe">Liên hệ đặt sản phẩm</a>
+                                        <a href="<?php the_permalink(1594) ?>" class="btn btn-do btn-lienhe">Liên hệ đặt sản phẩm</a>
                                     </div>
                                 </div>
                             </div>

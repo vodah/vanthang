@@ -51,7 +51,10 @@ get_header(); ?>
                                             </a>
                                         </div>
                                         <div class="text-tintuc">
-                                            <h4 class="tt-tintuc"><?php the_title(); ?></h4>
+                                            <a href="<?php the_permalink() ?>">
+
+                                                <h4 class="tt-tintuc"><?php the_title(); ?></h4>
+                                            </a>
                                             <p class="date-time"></p>
                                             <p class="mota-2"><?= get_field('short_description', get_the_ID()) ?></p>
                                             <a href="<?php the_permalink() ?>">Xem thêm&nbsp;&nbsp;<img

@@ -218,6 +218,8 @@ foreach ($history as $i) { ?>
         </div>
     </section>
 
+
+
 <?php
 get_footer();
 ?>

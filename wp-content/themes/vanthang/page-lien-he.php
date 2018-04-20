@@ -34,62 +34,50 @@ get_header();
         </header>
 
         <?php
-        while ( have_posts() ) :
+        while (have_posts()) :
             the_post();
 
 
-        ?>
+            ?>
             <section id="v-content" class="sec-lienhe">
                 <div class="container">
                     <div class="row">
-<!--                        <div class="col-md-7 col-xs-12">-->
-<!--                            <div class="v-lh-til">Gửi câu hỏi cho chúng tôi</div>-->
-<!--                            <div class="v-form1">-->
-<!--                                <label>Họ tên<input class="ten" type="text" name="" placeholder="Họ tên đầy đủ của bạn"></label>-->
-<!--                                <label>Địa chỉ<input class="dc" type="text" name="" placeholder="Địa chỉ liên lạc của bạn"></label>-->
-<!--                            </div>-->
-<!--                            <div class="v-form1 v-form2">-->
-<!--                                <label>Số điện thoại<input class="ten" type="text" name="" placeholder="Số điện thoại dùng để liên hệ với bạn"></label>-->
-<!--                                <label>Email<input class="dc" type="text" name="" placeholder="Địa chỉ email của bạn"></label>-->
-<!--                            </div>-->
-<!--                            <label class="v-select">Sản phẩm quan tâm-->
-<!--                                <select name="select">-->
-<!--                                    <option value="">Vận thăng lồng Sumo</option>-->
-<!--                                    <option value="">Vận thăng lồng Sumo1</option>-->
-<!--                                    <option value="">Vận thăng lồng Sumo2</option>-->
-<!--                                </select>-->
-<!--                            </label>-->
-<!--                            <label class="v-area">Nội dung<textarea placeholder="Ý kiến của bạn"></textarea></label>-->
-<!--                            <button class="btn v-submit" type="submit">gửi ý kiến</button>-->
-<!--                        </div>-->
-                        <?= do_shortcode( '[contact-form-7 id="1598" title="Trang liên hệ"]' ); ?>
+
+                        <?= do_shortcode('[contact-form-7 id="1598" title="Trang liên hệ"]'); ?>
+
                         <div class="col-md-5 col-xs-12">
-                            <?php $image = get_field('image','option');
-                            $address = get_field('address','option');
-                            $website = get_field('website','option');
-                            $website2 = get_field('website2','option');
-                            $email = get_field('email','option');
-                            $phone = get_field('phone','option');
-                            $phone2 = get_field('phone2','option');
+                            <?php $image = get_field('image', 'option');
+                            $address = get_field('address', 'option');
+                            $website = get_field('website', 'option');
+                            $website2 = get_field('website2', 'option');
+                            $email = get_field('email', 'option');
+                            $phone = get_field('phone', 'option');
+                            $phone2 = get_field('phone2', 'option');
 
                             ?>
                             <div class="v-lh-til">Thông tin liên hệ</div>
                             <div class="v-ttlh">
-                                <div class="v-ttlh-til"><?= the_title();?></div>
-                                <span><?= $address;?></span>
-                                <p>Tel :  <?= $phone?> - <?= $phone2?></p>
-                                <p>Website :   <?= $website;?> - <?= $website2;?></p>
-                                <p>Email: <?= $email;?> </p>
+                                <div class="v-ttlh-til"><?= the_title(); ?></div>
+                                <span><?= $address; ?></span>
+                                <p>Tel : <?= $phone ?> - <?= $phone2 ?></p>
+                                <p>Website : <?= $website; ?> - <?= $website2; ?></p>
+                                <p>Email: <?= $email; ?> </p>
                             </div>
                             <div class="v-share">
                                 <ul>
-                                    <li><a href="#"><img src="<?= get_template_directory_uri() ?>/images/lien-he-ic01.png" alt=""></a></li>
-                                    <li><a href="#"><img src="<?= get_template_directory_uri() ?>/images/lien-he-ic02.png" alt=""></a></li>
-                                    <li><a href="#"><img src="<?= get_template_directory_uri() ?>/images/lien-he-ic03.png" alt=""></a></li>
+                                    <li><a href="<?= get_field('link_facebook', 'option'); ?>"><img
+                                                    src="<?= get_template_directory_uri() ?>/images/lien-he-ic01.png"
+                                                    alt=""></a></li>
+                                    <li><a href="<?= get_field('link_intargram', 'option'); ?>"><img
+                                                    src="<?= get_template_directory_uri() ?>/images/lien-he-ic02.png"
+                                                    alt=""></a></li>
+                                    <li><a href="<?= get_field('link_youtube', 'option'); ?>"><img
+                                                    src="<?= get_template_directory_uri() ?>/images/lien-he-ic03.png"
+                                                    alt=""></a></li>
                                 </ul>
                             </div>
-                            <div class="v-map">
-                                <a href=""><img src="images/lien-he-im01.jpg" alt=""></a>
+                            <div class="v-map" >
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d3724.894357083113!2d105.85945364994727!3d20.9968714441747!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1zMjAzIE1pbmggS2hhaSwgVOG6p25nIDQgdMOyYSBuaMOgIEjDoG4gVmnhu4d0LCBIYWkgQsOgIFRyxrBuZywgSMOgIE7hu5lp!5e0!3m2!1svi!2s!4v1524200657268" width="423" height="255" frameborder="0" style="border:0" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>

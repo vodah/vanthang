@@ -51,10 +51,12 @@ if ( ! function_exists( 'vanthang_setup' ) ) :
             'quote',
             'link'
         ));
+		add_theme_support('menus');
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'vanthang' ),
+			'menu-2' => esc_html__( 'Primary', 'vanthang' ),
 		) );
 
 		/*
@@ -180,10 +182,15 @@ if( function_exists('acf_add_options_page') ) {
         'menu_title'    => 'Website',
         'parent_slug'   => $parent['menu_slug'],
     ));
+    acf_add_options_sub_page(array(
+        'page_title'    => 'Menu',
+        'menu_title'    => 'Menu',
+        'parent_slug'   => $parent['menu_slug'],
+    ));
 }
 add_image_size('san_pham_home',360,256,true);
 add_image_size('tin_tuc_home',285,380,true);
-add_image_size('tin_tuc_chitiet',750,390,true);
+add_image_size('tin_tuc_chitiet',750,390,false);
 add_image_size('san_pham_chitiet',1000,367,true);
 
 
