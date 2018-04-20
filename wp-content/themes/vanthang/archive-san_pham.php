@@ -13,11 +13,12 @@
  */
 
 get_header();
-//$agrs = array(
-//    'post_type' => 'san_pham',
-//    'posts_per_page' => 6,
-//);
-//$san_pham = new WP_Query($agrs);
+$agrs = array(
+    'post_type' => 'san_pham',
+    'posts_per_page' => 6,
+);
+$san_pham = new WP_Query($agrs);
+global $wp_query;
 ?>
 
 <div id="primary" class="content-area">
@@ -37,14 +38,7 @@ get_header();
             <div class="container">
                 <div class="title-page-con">
                     <h1 class="xanh">Sản phẩm</h1>
-                    <!--                --><?php //$product_highlights = get_field('product_highlights', 1404);
-                    //                $count = 0;
-                    //                foreach ($product_highlights as $i) {
-                    //                    $count++;
-                    //                }
-                    //
-                    //                ?>
-                    <!--                <span>--><? //= $count; ?><!-- sản phẩm</span>-->
+                                    <span><?= $wp_query->found_posts; ?> sản phẩm</span>
                 </div>
                 <div class="wp-list-sp-sanpham">
                     <div class="row">
@@ -65,7 +59,7 @@ get_header();
                                     </div>
                                 </div>
                             </div>
-                        <?php endwhile; // End of the loop.
+                        <?php endwhile;
                         ?>
 
 
