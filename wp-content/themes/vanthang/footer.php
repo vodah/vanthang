@@ -49,9 +49,7 @@
             <div class="container">
                 <h4 class="tt-ft-bottom">Nếu quan tâm tới sản phẩm và dịch vụ của Hawee hoặc có bất cứ thắc mắc nào xin vui lòng để lại lời nhắn cho chúng tôi</h4>
                 <?= do_shortcode( '[contact-form-7 id="1370" title="Liên Hệ"]' ); ?>
-                    <div class="copy-right">
-                        <span>Copyright © 2018  Vận thăng Sumo  | Design and deverlop by wecan-group.com</span>
-                    </div>
+
                 </div>
             </div>
         </div>

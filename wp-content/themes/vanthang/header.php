@@ -237,14 +237,68 @@
                                     <a class="navbar-brand" href="<?= get_home_url() ?>"><img
                                                 src="<?= $title['url'] ?>"></a>
                                 </div>
-                                <?php
-                                print_r(wp_nav_menu( array(
-                                    'theme_location' => 'menu-1', // tên location cần hiển thị
-                                    'container' => 'div', // thẻ container của menu
-                                    'container_class' => 'collapse navbar-collapse navbar-ex1-collapse menu-r', //class của container
-                                    'menu_class' => 'nav navbar-nav navbar-right mena-menu' // class của menu bên trong
-                                ) ));
-                                ?>
+                                <div class="collapse navbar-collapse navbar-ex1-collapse" >
+                                    <ul class="nav navbar-nav navbar-right mena-menu" >
+                                        <?php $a = get_field('menu', 'option');
+                                        foreach ($a as $item) {
+                                            if ($item['title'] == "Catalog") {
+
+                                                ?>
+                                                <li class="catalog"><a href="<?= $item['link'] ?>"><span><i class="fa fa-cloud-download"></i><?= $item['title'] ?></span></a>
+                                                </li>
+                                                <?php
+                                            } else {
+                                                ?>
+
+                                                <li><a href="<?= $item['link'] ?>"><?= $item['title'] ?></a>
+                                                    <?php if (!empty($item['subproduct'])) {
+                                                        ?>
+                                                        <ul class="sub-menu ov-hid">
+                                                            <div class="div-sub">
+                                                                <h4 class="ff-prata"><?= $item['title'] ?></h4>
+                                                                <?php
+                                                                $key = 0;
+                                                                foreach ($item['subproduct'] as $value) {
+                                                                    $key++;
+                                                                    ?>
+
+                                                                    <li class="<?php if ($key == 1) {
+                                                                        echo "v-active active";
+                                                                    } ?> "><a
+                                                                                href="#"><?= $value->post_title ?></a>
+                                                                        <ul class="sub-menu">
+                                                                            <li>
+                                                                                <article>
+
+                                                                                    <div class="img-submenu">
+                                                                                        <a href="<?php the_permalink($value->ID) ?>"><?= get_the_post_thumbnail($value->ID, 'san_pham_home') ?></a>
+                                                                                    </div>
+                                                                                    <div class="text-submenu">
+                                                                                        <h4 class="ff-prata"><?= $value->post_title ?></h4>
+                                                                                        <p><?= get_field('short_description', $value->ID) ?></p>
+                                                                                        <a href="<?php the_permalink($value->ID) ?>"
+                                                                                           class="btn btn-do btn-xem-ct">Xem
+                                                                                            chi tiết</a>
+                                                                                    </div>
+                                                                                </article>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </li>
+                                                                <?php }
+                                                                ?>
+
+                                                            </div>
+                                                        </ul>
+                                                        <?php
+                                                    }
+
+                                                    ?>
+                                                </li>
+                                            <?php }
+                                        } ?>
+
+                                    </ul>
+                                </div>
                             </div>
                         </nav>
                     </div>
